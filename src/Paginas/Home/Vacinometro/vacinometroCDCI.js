@@ -25,7 +25,7 @@ import {
     ExpandMore,
     InfoOutlined,
 } from '@material-ui/icons';
-import ls from '../../../Arquivos/imagens/amargosa_old.png';
+import ls from '../../../Arquivos/imagens/bandeira_sobradinho.jpeg';
 import Tabletop from 'tabletop';
 import { Spring } from 'react-spring/renderprops';
 
@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const urlVacinometro = 'https://docs.google.com/spreadsheets/d/1pZATDMlA84b88a3t6BFM6OmRIlrsyc_i4rq1iV1TNC4/edit#gid=0';
+const urlVacinometro = 'https://docs.google.com/spreadsheets/d/17b2nc4HQe6VEctMJ1MmgVq1nuTW2p7xUNa4YdBpQABo/edit#gid=0';
 
 export default function Vacinometro(props) {
 
@@ -150,9 +150,9 @@ export default function Vacinometro(props) {
     var dadosBahiaPrimeira = vacinometroDados.map(x => parseInt(x.bahia_primeira));
     var dadosBahiaSegunda = vacinometroDados.map(x => parseInt(x.bahia_segunda));
     var dadosBahiaDoseUnica = vacinometroDados.map(x => parseInt(x.bahia_dose_unica));
-    var dadosAmargosa = vacinometroDados.map(x => parseInt(x.amargosa));
-    var dadosAmargosaSegunda = vacinometroDados.map(x => parseInt(x.amargosa_segunda));
-    let dadosAmargosaDoseUnica = vacinometroDados.map(x => parseInt(x.amargosa_dose_unica));
+    var dadosAmargosa = vacinometroDados.map(x => parseInt(x.sobradinho));
+    var dadosAmargosaSegunda = vacinometroDados.map(x => parseInt(x.sobradinho_segunda));
+    let dadosAmargosaDoseUnica = vacinometroDados.map(x => parseInt(x.sobradinho_dose_unica));
        
     return (
         <React.Fragment>
@@ -493,7 +493,7 @@ export default function Vacinometro(props) {
                                                 variant='body2'
                                                 className={classes.title}
                                             >
-                                                Amargosa - 1° Dose
+                                                Sobradinho - 1° Dose
                                             </Typography>
                                             <Spring
                                                 from={{
@@ -527,7 +527,7 @@ export default function Vacinometro(props) {
                                                 variant='body2'
                                                 className={classes.title}
                                             >
-                                                Amargosa - 2° Dose
+                                                Sobradinho - 2° Dose
                                         </Typography>
                                             <Spring
                                                 from={{
@@ -561,7 +561,7 @@ export default function Vacinometro(props) {
                                                 variant='body2'
                                                 className={classes.title}
                                             >
-                                                Amargosa - Dose Única
+                                                Sobradinho - Dose Única
                                         </Typography>
                                             <Spring
                                                 from={{
@@ -591,36 +591,6 @@ export default function Vacinometro(props) {
                                         className={classes.footer}
                                         align='center'
                                     >
-                                        <InfoOutlined className={classes.buttonInfo}/>Este sistema será descontinuado a partir de 30 de julho de 2021. 
-                                     </Typography>   
-                                    <Divider variant="middle" />
-                                    <Typography
-                                        className={classes.footer}
-                                        align='center'
-                                    >
-                                        Indicamos o consumo das informação através do 
-                                        <Link
-                                            onClick={() => window.open('https://www.instagram.com/prefamargosa/', '_blank')}
-                                            to='https://www.instagram.com/prefamargosa/'
-                                            className={classes.footer}> instragram do município</Link>, do 
-                                            <Link
-                                            onClick={() => window.open('https://play.google.com/store/apps/details?id=com.cidadedigital.amargosa&hl=pt', '_blank')}
-                                            to='https://play.google.com/store/apps/details?id=com.cidadedigital.amargosa&hl=pt'
-                                            className={classes.footer}> aplicativo ofical do município via Android, </Link> 
-                                            <Link
-                                            onClick={() => window.open('https://apps.apple.com/br/app/amargosa-digital/id1482671115', '_blank')}
-                                            to='https://apps.apple.com/br/app/amargosa-digital/id1482671115'
-                                            className={classes.footer}> aplicativo ofical do município via IOS(App Store)</Link> e/ou 
-                                            <Link
-                                            onClick={() => window.open('https://amargosa.ba.gov.br/', '_blank')}
-                                            to='https://amargosa.ba.gov.br/'
-                                            className={classes.footer}> site oficial</Link>.
-                                    </Typography>
-                                    <Divider variant="middle" />
-                                    <Typography
-                                        className={classes.footer}
-                                        align='center'
-                                    >
                                         <Link
                                             onClick={() => window.open('https://lsconsultorias.srv.br/projetos', '_blank')}
                                             to='https://lsconsultorias.srv.br/projetos'
@@ -635,7 +605,7 @@ export default function Vacinometro(props) {
                                         align='center'
                                     >
                                         Fonte:
-                                        <li>Secretária de Saúde de Amargosa</li>
+                                        <li>Secretária de Saúde de Sobradinho</li>
                                         <li>Secretária de Saúde do Estado da Bahia</li>
                                         <li>
                                             <Link
