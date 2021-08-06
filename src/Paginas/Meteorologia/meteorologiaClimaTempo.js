@@ -34,7 +34,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const apiClima = 'https://apiadvisor.climatempo.com.br/api/v1/weather/locale/7961/current?token=3b8c7735cb75365516b9b24d39e27b74'
+const apiClima = 'https://apiadvisor.climatempo.com.br/api/v1/weather/locale/7961/current?token=28fc0556706e2e56cbaa5655e5d5360e'
 
 export default function Metereologia() {
 

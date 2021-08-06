@@ -605,7 +605,7 @@ export default function Vacinometro(props) {
                                         align='center'
                                     >
                                         Fonte:
-                                        <li>Secretária de Saúde de Sobradinho</li>
+                                        <li>Secretária de Saúde dedinho</li>
                                         <li>Secretária de Saúde do Estado da Bahia</li>
                                         <li>
                                             <Link
