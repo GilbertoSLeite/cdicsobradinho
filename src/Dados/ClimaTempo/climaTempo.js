@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, CssBaseline } from '@material-ui/core';
 import Sol from '../../Arquivos/imagens/icones/45px/1.png';
@@ -27,10 +27,7 @@ import GraniNoite from '../../Arquivos/imagens/icones/45px/8n.png';
 import SolPN from '../../Arquivos/imagens/icones/45px/9.png';
 import LuaPN from '../../Arquivos/imagens/icones/45px/9n.png';
 
-const idClimaTempoMunicipio = '7545'; //Amargosa 
-const tokenClimaTempoLS = '3b8c7735cb75365516b9b24d39e27b74';
-
-const apiClimaTempo = ('https://apiadvisor.climatempo.com.br/api/v1/weather/locale/' + idClimaTempoMunicipio + '/current?token=' + tokenClimaTempoLS);
+const apiClimaTempo = ('https://apiadvisor.climatempo.com.br/api/v1/weather/locale/7961/current?token=28fc0556706e2e56cbaa5655e5d5360e');
 
 const pageMeteo = () => {
     const url = '/cidadao/meteorologia';
@@ -52,13 +49,21 @@ export default function ClimaTempo() {
 
     const classes = useStyle();
 
-    const [climaTempo, setClimaTempo] = useState([]);
+    const [climaTempo, setClimaTempo] = React.useState([]);
 
-    useEffect(() => {
+    const requestOptions = {    
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: 'GET',
+        redirect: 'follow',
+    };  
+
+    React.useEffect(() => {
         climaTempoDados();
         async function climaTempoDados() {
             try {
-                const reponse = await fetch(apiClimaTempo);
+                const reponse = await fetch(apiClimaTempo, requestOptions);
                 const json = await reponse.json();
                 setClimaTempo(json.data);
             } catch (error) {
