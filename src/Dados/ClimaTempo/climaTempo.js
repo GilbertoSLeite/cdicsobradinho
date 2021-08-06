@@ -49,21 +49,13 @@ export default function ClimaTempo() {
 
     const classes = useStyle();
 
-    const [climaTempo, setClimaTempo] = React.useState([]);
-
-    const requestOptions = {    
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: 'GET',
-        redirect: 'follow',
-    };  
+    const [climaTempo, setClimaTempo] = React.useState([]);  
 
     React.useEffect(() => {
         climaTempoDados();
         async function climaTempoDados() {
             try {
-                const reponse = await fetch(apiClimaTempo, requestOptions);
+                const reponse = await fetch(apiClimaTempo);
                 const json = await reponse.json();
                 setClimaTempo(json.data);
             } catch (error) {
