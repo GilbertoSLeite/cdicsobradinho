@@ -52,17 +52,17 @@ export default function ClimaTempo() {
     const [climaTempo, setClimaTempo] = React.useState([]);  
 
     React.useEffect(() => {
-        climaTempoDados();
-        async function climaTempoDados() {
+        (async () => {
             try {
-                const reponse = await fetch(apiClimaTempo);
-                const json = await reponse.json();
+                const response = await fetch(apiClimaTempo);
+                const json = await response.json();
                 setClimaTempo(json.data);
             } catch (error) {
-                console.log('Desenvolvedor ocorreu este erro: ' + error);
+                console.log('ClimaTempo ' + error);
             };
-        };
-    }, []);
+            
+        })();
+    }, []);   
 
     var icone = '';
 

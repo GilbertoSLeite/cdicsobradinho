@@ -240,8 +240,8 @@ export default function Home() {
   const openVacinometro = () => {
     toggle(!state);
     setTimeout(() => {
-      setVacinometro(vacinometro === true ? false : true);
-    }, 2100);
+      setVacinometro(!vacinometro);
+    }, 1000);
   };
 
   const { x } = useSpring({
@@ -263,7 +263,7 @@ export default function Home() {
           id="GridLine1"
           spacing={3}
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           container
           className={classes.grid}
         >

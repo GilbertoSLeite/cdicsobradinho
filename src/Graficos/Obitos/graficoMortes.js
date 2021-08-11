@@ -13,12 +13,12 @@ export default function GrafMorte() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setDadosMortes(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setDadosMortes(data);
 
     const graphCaseMorte = {
         labels: dadosMortes.map(x => x.mortes),

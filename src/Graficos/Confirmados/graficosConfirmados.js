@@ -13,12 +13,12 @@ export default function GrafConf() {
      React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setDadosConfirmado(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setDadosConfirmado(data);
 
     const graphCaseConf = {
 

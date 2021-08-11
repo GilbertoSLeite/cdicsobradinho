@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
-import Analytics from 'react-router-ga';
 import Layout from '../src/Layout/layout';
+import GA4React, { useGA4React } from "ga-4-react";
+
+const ga4react = new GA4React("G-YVT7Y200N5");
 
 const hist = createBrowserHistory();
 
-const histloca = hist.location.pathname
+const histloca = hist.location.pathname;
 
 if (histloca === '/') {
   hist.replace('/cidadao/home');
@@ -21,13 +23,22 @@ if (histloca === '/cidadao/amargosa') {
   window.location.reload();
 };
 
+function GA() {
+const ga = useGA4React();
+console.log(ga);  
+return null
+}
+
+(async () =>{
+ga4react.initialize();
+
 ReactDOM.render(
   < Router history={hist} >
-    <Analytics id="UA-148941763-3">
       <Switch>
         <Route path={histloca} component={Layout} />
       </Switch>
-    </Analytics>
+        <GA/>
   </Router >,
   document.getElementById("root")
 );
+})();

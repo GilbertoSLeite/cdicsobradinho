@@ -13,13 +13,13 @@ export default function GrafRecuperado() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setDadosRecuperados(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
 
+    const dataSheets = (data, tabletop) => setDadosRecuperados(data);
+    
     var ultimaInformacao = dadosRecuperados[dadosRecuperados.length - 1] === undefined ? 0 : dadosRecuperados[dadosRecuperados.length - 1];
     var ultimoConfirmado = (ultimaInformacao.confirmado);
     var ultimoObitos = (ultimaInformacao.mortes);

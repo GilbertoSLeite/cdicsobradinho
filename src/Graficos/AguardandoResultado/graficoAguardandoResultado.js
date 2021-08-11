@@ -13,12 +13,12 @@ export default function GrafAguardandoResultado() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setAguardandoData(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setAguardandoData(data);
     
     const totalCasosAguardando = {
 

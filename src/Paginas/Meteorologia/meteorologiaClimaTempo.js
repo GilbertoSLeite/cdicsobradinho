@@ -97,7 +97,7 @@ export default function Metereologia() {
             >
                 <Grid
                     container
-                    justify="center"
+                    justifyContent="center"
                 >
                     <Grid
                         id="gridMeteorologia"

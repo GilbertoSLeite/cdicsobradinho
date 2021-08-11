@@ -47,14 +47,14 @@ export default function DadosRecuperados() {
     const [bolDadosRecuperados, setBolDadosRecuperados] = React.useState(null);    
 
     React.useEffect(() => {
-            Tabletop.init({
-                key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setBolDadosRecuperados(data);
-                },
-                simpleSheet: true,
-            });
+        Tabletop.init({
+            key: urlBoletimAmargosa,
+            callback: dataSheets,
+            simpleSheet: true,
+        });
     }, []);
+
+    const dataSheets = (data, tabletop) => setBolDadosRecuperados(data);
     
     if(bolDadosRecuperados !== null){
         var idData = bolDadosRecuperados.length
@@ -72,7 +72,7 @@ export default function DadosRecuperados() {
                 id="GridLine1"
                 spacing={3}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
             >
                 <Grid

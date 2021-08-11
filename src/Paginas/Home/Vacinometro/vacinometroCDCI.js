@@ -23,7 +23,6 @@ import { useSpring, animated } from 'react-spring';
 import {
     Close,
     ExpandMore,
-    InfoOutlined,
 } from '@material-ui/icons';
 import ls from '../../../Arquivos/imagens/bandeira_sobradinho.jpeg';
 import Tabletop from 'tabletop';
@@ -98,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const urlVacinometro = 'https://docs.google.com/spreadsheets/d/17b2nc4HQe6VEctMJ1MmgVq1nuTW2p7xUNa4YdBpQABo/edit#gid=0';
+const urlVacinometro = 'https://docs.google.com/spreadsheets/d/17b2nc4HQe6VEctMJ1MmgVq1nuTW2p7xUNa4YdBpQABo/edit#gid=0'
 
 export default function Vacinometro(props) {
 
@@ -124,23 +123,19 @@ export default function Vacinometro(props) {
     };
 
     React.useEffect(() => {
-        ValidarChecked(checked);
-        function ValidarChecked(value) {
-            if (value) {
+            if (checked) {
                 setOpen(true);
                 Tabletop.init({
                     key: urlVacinometro,
-                    callback: function (data, tabletop) {
-                        setVacinometroDados(data);
-                    },
+                    callback: dataSheets,
                     simpleSheet: true,
                 });
             } else {
                 setOpen(false);
-                setVacinometroDados([]);
             };
-        };
     }, [checked]);    
+    
+    const dataSheets = (data, tabletop) => setVacinometroDados(data);
     
     var dataVacinometro = vacinometroDados.map(x => x.data_registro);
     var dadosGlobal = vacinometroDados.map(x => parseInt(x.global));
@@ -180,7 +175,7 @@ export default function Vacinometro(props) {
                             <CardHeader
                                 avatar={
                                     <Avatar
-                                        variant='circle'
+                                        variant='circular'
                                         src={ls}
                                     />
                                 }
@@ -213,7 +208,7 @@ export default function Vacinometro(props) {
                                         id="GridLine1"
                                         spacing={1}
                                         alignItems='stretch'
-                                        justify="center"
+                                        justifyContent="center"
                                         container
                                     >
                                         <Grid
@@ -255,7 +250,7 @@ export default function Vacinometro(props) {
                                         id="GridLine1"
                                         spacing={1}
                                         alignItems='stretch'
-                                        justify="center"
+                                        justifyContent="center"
                                         container
                                     >
                                         <Grid
@@ -369,7 +364,7 @@ export default function Vacinometro(props) {
                                         id="GridLine1"
                                         spacing={1}
                                         alignItems='stretch'
-                                        justify="center"
+                                        justifyContent="center"
                                         container
                                     >
                                         <Grid
@@ -480,7 +475,7 @@ export default function Vacinometro(props) {
                                         id="GridLine1"
                                         spacing={1}
                                         alignItems='stretch'
-                                        justify="center"
+                                        justifyContent="center"
                                         container
                                     >
                                         <Grid

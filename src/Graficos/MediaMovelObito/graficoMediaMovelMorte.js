@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Bar,
 } from 'react-chartjs-2';
-import Configuracoes from '../../Configuracoes/configuracoes';
 
 export default function GrafMediaMovMor() {
 
@@ -12,7 +11,7 @@ export default function GrafMediaMovMor() {
         mediaMovelData();
         async function mediaMovelData() {
             try {
-                const dadosConfiguracoes = await Configuracoes();
+                const dadosConfiguracoes = []
                 var dadosBoletim = dadosConfiguracoes.map(x => x.apiBoletim);
                 dadosBoletim = dadosBoletim[dadosBoletim.length - 1];
                 const urlMediaMovel = dadosBoletim;

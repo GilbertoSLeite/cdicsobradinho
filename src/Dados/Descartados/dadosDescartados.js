@@ -34,12 +34,12 @@ export default function Descartados() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setBolDadosDescartado(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setBolDadosDescartado(data);
 
     if(bolDadosDescartado !== null){
         var idData = bolDadosDescartado.length
@@ -57,7 +57,7 @@ export default function Descartados() {
                 id="GridLine1"
                 spacing={2}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
             >
                 <Grid

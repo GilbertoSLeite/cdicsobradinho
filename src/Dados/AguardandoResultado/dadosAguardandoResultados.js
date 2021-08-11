@@ -34,12 +34,12 @@ export default function DadosAguardandoResultado() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setBolDadosAguardando(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setBolDadosAguardando(data);
     
     if(bolDadosAguardando !== null){
         var idData = bolDadosAguardando.length
@@ -57,7 +57,7 @@ export default function DadosAguardandoResultado() {
                 id="GridLine1"
                 spacing={2}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
             >
                 <Grid

@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyledProvider, CookiesBanner } from 'components-extra';
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
 
-const tema = createMuiTheme({
+const tema = createTheme({
     palette: {
         common: {
             black: '#000201',

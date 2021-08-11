@@ -164,7 +164,7 @@ export default function PageVaccination() {
                 id="GridLine1"
                 spacing={2}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
                 className={classes.grid}
             >

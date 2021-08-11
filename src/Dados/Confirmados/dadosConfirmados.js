@@ -34,12 +34,12 @@ export default function Confirmados() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setBolDadosConfirmados(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setBolDadosConfirmados(data);
     
     if(bolDadosConfirmados !== null){
         var idData = bolDadosConfirmados.length
@@ -57,7 +57,7 @@ export default function Confirmados() {
                 id="GridLine1"
                 spacing={2}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
             >
                 <Grid

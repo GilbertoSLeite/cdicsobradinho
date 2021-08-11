@@ -13,12 +13,12 @@ export default function GrafDesc() {
      React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setDescartadoData(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setDescartadoData(data);
 
     const totalCasosDescart = {
         labels: descartadoData.map(x => x.descartado),

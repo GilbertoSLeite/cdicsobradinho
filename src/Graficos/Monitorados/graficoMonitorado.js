@@ -13,12 +13,12 @@ export default function GrafMon() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setDadosMonitorado(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+    
+    const dataSheets = (data, tabletop) => setDadosMonitorado(data);
 
     const totalCasosMonito = {
 

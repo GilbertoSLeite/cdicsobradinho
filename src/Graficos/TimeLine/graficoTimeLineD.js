@@ -59,12 +59,12 @@ export default function TimeLineD() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setBoletinsDados(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setBoletinsDados(data);
 
     if (boletinsDados !== null) {
         var dadosBoletins = boletinsDados.map(x => x).filter((data) => data.data_boletim === dataRegistro);

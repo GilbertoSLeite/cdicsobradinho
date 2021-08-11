@@ -66,7 +66,7 @@ export default function DadosImunizados() {
                 id="GridLine1"
                 spacing={3}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
             >
                 <Grid

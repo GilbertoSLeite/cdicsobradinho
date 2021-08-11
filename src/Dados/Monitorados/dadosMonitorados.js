@@ -34,12 +34,12 @@ export default function Monitorados() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setBolDadosMonitorados(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setBolDadosMonitorados(data);
 
     if (bolDadosMonitorados !== null) {
         var idData = bolDadosMonitorados.length
@@ -57,7 +57,7 @@ export default function Monitorados() {
                 id="GridLine1"
                 spacing={2}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
             >
                 <Grid

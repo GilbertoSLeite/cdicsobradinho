@@ -1,5 +1,6 @@
 import React from 'react';
-import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core';
 import {
     Facebook,
     Instagram,
@@ -20,7 +21,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const tema = createMuiTheme({
+const tema = createTheme({
     palette: {
         common: {
             black: '#000201',

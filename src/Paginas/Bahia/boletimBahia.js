@@ -235,7 +235,7 @@ export default function BoletimBahia() {
                 <Grid
                     spacing={1}
                     alignItems="center"
-                    justify="center"
+                    justifyContent="center"
                     container
                     className={classes.grid}
                 >

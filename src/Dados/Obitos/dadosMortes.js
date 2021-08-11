@@ -34,12 +34,12 @@ export default function DadosObitos() {
     React.useEffect(() => {
             Tabletop.init({
                 key: urlBoletimAmargosa,
-                callback: function (data, tabletop) {
-                    setBolDadosMortes(data);
-                },
+                callback: dataSheets,
                 simpleSheet: true,
             });
     }, []);
+
+    const dataSheets = (data, tabletop) => setBolDadosMortes(data);
 
     if (bolDadosMortes !== null) {
         var idData = bolDadosMortes.length
@@ -57,7 +57,7 @@ export default function DadosObitos() {
                 id="GridLine1"
                 spacing={2}
                 alignItems="center"
-                justify="center"
+                justifyContent="center"
                 container
             >
                 <Grid
